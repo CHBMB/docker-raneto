@@ -37,7 +37,7 @@ RUN \
  npm config set unsafe-perm true && \
  npm install --global gulp-cli pm2 && \
  	rm -f /app/raneto/example/config.default.js && \
-	gulp
+	gulp && \
  
  echo "**** cleanup ****" && \
  apk del --purge build-dependencies && \
