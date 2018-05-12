@@ -35,9 +35,8 @@ RUN \
  
  echo "**** install raneto node dev modules and build ****" && \
  npm config set unsafe-perm true && \
- npm install --global gulp gulp-cli pm2 && \
+ npm install && \
  	rm -f /app/raneto/example/config.default.js && \
-	gulp && \
  
  echo "**** cleanup ****" && \
  apk del --purge build-dependencies && \
