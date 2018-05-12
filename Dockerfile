@@ -32,14 +32,11 @@ RUN \
  /tmp/raneto-src.tar.gz -C \
 	/app/raneto --strip-components=1 && \
  cd /app/raneto && \
- #echo "**** make flway executable ****" && \
- #chmod +x ./flyway/flyway && \
  echo "**** install raneto node dev modules and build ****" && \
  npm config set unsafe-perm true && \
- npm install && \
+ npm install --global gulp-cli pm2 && \
+ 
  echo "**** cleanup ****" && \
- cd /app/raneto && \
- npm prune --production && \
  apk del --purge build-dependencies && \
  rm -rf \
 	/root \
