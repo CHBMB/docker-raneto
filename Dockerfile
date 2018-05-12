@@ -32,9 +32,12 @@ RUN \
  /tmp/raneto-src.tar.gz -C \
 	/app/raneto --strip-components=1 && \
  cd /app/raneto && \
+ 
  echo "**** install raneto node dev modules and build ****" && \
  npm config set unsafe-perm true && \
  npm install --global gulp-cli pm2 && \
+ 	rm -f /app/raneto/example/config.default.js && \
+	gulp
  
  echo "**** cleanup ****" && \
  apk del --purge build-dependencies && \
@@ -46,3 +49,7 @@ RUN \
 
 # copy local files
 COPY root/ /
+
+# ports and volumes
+EXPOSE 3000
+VOLUME /config
