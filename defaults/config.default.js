@@ -39,7 +39,7 @@ var config = {
   // Specify the path of your content folder where all your '.md' files are located
   // Fix: Needs trailing slash for now!
   // Fix: Cannot be an absolute path
-  content_dir : '/config/content/',
+  content_dir : '/config/content',
 
   // Where is the public directory or document root?
   public_dir  : path.join(__dirname, '..', 'themes', 'default', 'public'),
