@@ -36,7 +36,6 @@ RUN \
  echo "**** install raneto node dev modules and build ****" && \
  npm config set unsafe-perm true && \
  npm install && \
- 	cp /defaults/config.default.js /app/raneto/example/config.default.js && \
  
  echo "**** cleanup ****" && \
  apk del --purge build-dependencies && \
