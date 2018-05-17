@@ -26,22 +26,23 @@ RUN \
 	/app/raneto && \
  RANETO_VER="$(curl -sX GET https://api.github.com/repos/gilbitron/Raneto/releases/latest | grep 'tag_name' | cut -d\" -f4)" && \
  curl -o \
- /tmp/raneto-src.tar.gz -L \
+/tmp/raneto-src.tar.gz -L \
 	"https://github.com/gilbitron/Raneto/archive/${RANETO_VER}.tar.gz" && \
- tar xf \
- /tmp/raneto-src.tar.gz -C \
+tar xf \
+/tmp/raneto-src.tar.gz -C \
 	/app/raneto --strip-components=1 && \
- cd /app/raneto && \
+cd /app/raneto && \
  
- echo "**** install raneto node dev modules and build ****" && \
- npm config set unsafe-perm true && \
- npm install && \
+echo "**** install raneto node dev modules and build ****" && \
+npm config set unsafe-perm true && \
+npm install && \
  
- echo "**** cleanup ****" && \
- apk del --purge build-dependencies && \
- rm -rf \
+echo "**** cleanup ****" && \
+apk del --purge build-dependencies && \
+rm -rf \
+	/root \
 	/tmp/* && \
- mkdir -p \
+mkdir -p \
 	/root
 
 # copy local files
