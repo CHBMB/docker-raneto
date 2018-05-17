@@ -6,13 +6,13 @@ var path = require('path');
 var config = {
 
   // Your site title (format: page_title - site_title)
-  site_title: 'Raneto Docs',
+  site_title: 'Sample Raneto Docs',
 
   // The base URL of your site (can use %base_url% in Markdown files)
   base_url: '',
 
   // Used for the "Get in touch" page footer link
-  support_email: '',
+  support_email: 'madhu@appsecco.com',
 
   // Footer Text / Copyright
   copyright: 'Copyright &copy; ' + new Date().getFullYear() + ' - <a href="http://raneto.com">Powered by Raneto</a>',
@@ -47,7 +47,7 @@ var config = {
   // The base URL of your images folder,
   // Relative to config.public_dir
   // (can use %image_url% in Markdown files)
-  image_url: '/config/images',
+  image_url: '/config/content/images',
 
   // Add your analytics tracking code (including script tags)
   analytics: '',
@@ -119,4 +119,4 @@ var config = {
 config.public_dir = path.join(__dirname, '..', 'themes', config.theme_name, 'public');
 
 // Exports
-module.exports = config; 
+module.exports = config;  
