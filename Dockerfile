@@ -40,7 +40,9 @@ RUN \
  echo "**** cleanup ****" && \
  apk del --purge build-dependencies && \
  rm -rf \
-	/tmp/* 
+	/tmp/* && \
+ mkdir -p \
+	/root
 
 # copy local files
 COPY root/ /
